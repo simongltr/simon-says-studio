@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon — Builder CTO</title>
-  <meta name="description" content="I build your MVP. You keep the equity. On-demand builder-CTO for non-technical founders with validated ideas.">
+  <meta name="description" content="Your CTO, on demand. I make the technical decisions, build the product, and hand you something that works.">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://simon-says.studio">
   <meta property="og:title"       content="Simon — Builder CTO">
-  <meta property="og:description" content="I build your MVP. You keep the equity. On-demand builder-CTO for non-technical founders with validated ideas.">
+  <meta property="og:description" content="Your CTO, on demand. I make the technical decisions, build the product, and hand you something that works.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://simon-says.studio">
@@ -27,7 +27,7 @@
       --bg:        #0D0D0B;
       --surface:   #161613;
       --text:      #F0EDE6;
-      --muted:     #6B6860;
+      --muted:     #908E88;
       --accent:    #D4FF58;
       --border:    #252521;
 
@@ -35,7 +35,7 @@
       --font-body:    'DM Sans', system-ui, sans-serif;
       --font-mono:    'Geist Mono', monospace;
 
-      --max-w:     680px;
+      --max-w:     760px;
       --space-xs:  8px;
       --space-sm:  12px;
       --space-md:  16px;
@@ -70,40 +70,51 @@
       padding: 0 24px;
     }
 
-    main {
-      padding: var(--space-4xl) 0;
+    /* ─── MASTHEAD ─── */
+    .masthead {
+      border-bottom: 3px solid var(--text);
+      padding: 20px 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
 
-    /* ─── EYEBROW ─── */
-    .eyebrow {
+    .masthead-name,
+    .masthead-url {
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--muted);
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: var(--space-lg);
+      white-space: nowrap;
     }
 
     /* ─── HERO ─── */
+    .hero {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(44px, 8vw, 64px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-lg);
+      font-size: clamp(64px, 13vw, 108px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin-bottom: 28px;
     }
 
     h1 em {
       font-style: italic;
       color: var(--accent);
+      display: block;
     }
 
     .hero-sub {
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.65;
       color: var(--muted);
-      margin-bottom: var(--space-2xl);
-      max-width: 480px;
+      margin-bottom: 36px;
+      max-width: 520px;
     }
 
     /* ─── TERMINAL CTA ─── */
@@ -123,10 +134,16 @@
     }
 
     .terminal-cta:hover { border-color: var(--accent); }
+    .terminal-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     .terminal-cta .prompt {
       color: var(--muted);
       margin-right: 8px;
+    }
+
+    .cmd {
+      display: inline;
+      white-space: nowrap;
     }
 
     .cursor {
@@ -145,8 +162,9 @@
     }
 
     .cta-fallback {
-      display: block;
-      margin-top: var(--space-sm);
+      display: inline-block;
+      padding: 14px 0;
+      margin-top: var(--space-xs);
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--muted);
@@ -156,10 +174,29 @@
     .cta-fallback:hover,
     .cta-fallback:visited { color: var(--muted); }
 
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 40px 0 0;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
     /* ─── STEPS ─── */
     .steps {
-      margin: var(--space-4xl) 0;
-      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .step {
@@ -169,6 +206,8 @@
       border-bottom: 1px solid var(--border);
       align-items: flex-start;
     }
+
+    .step:last-child { border-bottom: none; }
 
     .step-num {
       font-family: var(--font-mono);
@@ -190,21 +229,13 @@
     .step p {
       font-size: 14px;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     /* ─── INCLUDES ─── */
     .includes {
-      margin: var(--space-2xl) 0;
-    }
-
-    .includes-heading {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: var(--space-md);
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
     }
 
     .includes-list {
@@ -230,31 +261,21 @@
       flex-shrink: 0;
     }
 
-    /* ─── PRICING SIGNAL ─── */
-    .pricing {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--muted);
-      margin: var(--space-2xl) 0;
-    }
-
     /* ─── ABOUT ─── */
     .about {
-      margin: var(--space-4xl) 0 var(--space-2xl);
-      padding-top: var(--space-2xl);
-      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
     }
 
     .about p {
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.75;
       color: var(--muted);
     }
 
     /* ─── FOOTER ─── */
     footer {
-      padding-top: var(--space-2xl);
-      border-top: 1px solid var(--border);
+      padding: 32px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -270,17 +291,19 @@
 
     .footer-cta {
       font-size: 12px;
-      padding: 12px 14px;
+      padding: 10px 14px;
     }
 
     /* ─── MOBILE ─── */
     @media (max-width: 480px) {
-      main { padding: 48px 0; }
-
       footer {
         flex-direction: column;
         align-items: flex-start;
       }
+    }
+
+    @media (max-width: 360px) {
+      .masthead-url { display: none; }
     }
 
     /* ─── ACCESSIBILITY ─── */
@@ -291,77 +314,79 @@
   </style>
 </head>
 <body>
-  <main>
-    <div class="container">
+  <div class="container">
 
-      <p class="eyebrow">Simon — Builder CTO</p>
+    <div class="masthead">
+      <span class="masthead-name">Simon — Builder CTO</span>
+      <span class="masthead-url">simon-says.studio</span>
+    </div>
 
-      <h1>
-        I build your MVP.<br>
-        <em>You keep the equity.</em>
-      </h1>
+    <div class="hero">
+      <h1>Your CTO,<em>on demand.</em></h1>
 
       <p class="hero-sub">
-        For non-technical founders with validated ideas. Fast, clean delivery at a fraction of agency cost. You get a working product and the code — no lock-in, no surprises.
+        I make the technical decisions, build the product, and hand you something that works. For non-technical founders who are ready to ship.
       </p>
 
-      <a href="https://calendly.com/contact-simon-says/30min" class="terminal-cta" target="_blank" rel="noopener">
+      <a href="https://calendly.com/contact-simon-says/30min" class="terminal-cta" target="_blank" rel="noopener" aria-label="Book a 30-minute call with Simon">
         <span class="prompt">$</span>
-        book --slot 30min --with simon<span class="cursor"></span>
+        <span class="cmd">book --slot 30min --with simon<span class="cursor" aria-hidden="true"></span></span>
       </a>
-      <a href="mailto:contact@simon-says.studio" class="cta-fallback">or email contact@simon-says.studio</a>
-
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">01</span>
-          <div>
-            <h3>Discovery call</h3>
-            <p>30 minutes. I understand your idea, your users, and what "done" looks like.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <div>
-            <h3>Scoped proposal</h3>
-            <p>Fixed scope, fixed price. No hourly billing, no scope creep, no surprises.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <div>
-            <h3>I build it</h3>
-            <p>You get a production-deployed product, not a handoff to manage. Two weeks of bug fixes included.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="includes">
-        <p class="includes-heading">What's included</p>
-        <ul class="includes-list">
-          <li>Full-stack web app or site, production-deployed</li>
-          <li>All technical decisions made for you</li>
-          <li>2 weeks post-launch bug fixes</li>
-          <li>You own the code. No lock-in.</li>
-        </ul>
-      </div>
-
-      <p class="pricing">Projects typically start at $10k.</p>
-
-      <div class="about">
-        <p>
-          Simon is a full-stack engineer who has shipped production apps across fintech, SaaS, and marketplaces. He uses AI to compress delivery timelines without cutting corners. If you've been burned by an agency or can't find the right technical co-founder, you've found him.
-        </p>
-      </div>
-
-      <footer>
-        <span class="footer-name">simon-says.studio</span>
-        <a href="https://calendly.com/contact-simon-says/30min" class="terminal-cta footer-cta" target="_blank" rel="noopener">
-          <span class="prompt">$</span>
-          book --slot 30min --with simon<span class="cursor"></span>
-        </a>
-      </footer>
-
+      <br>
+      <a href="mailto:contact@simon-says.studio" class="cta-fallback">or just email me — contact@simon-says.studio</a>
     </div>
-  </main>
+
+    <span class="section-label">How it works</span>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-num" aria-hidden="true">01</span>
+        <div>
+          <h3>Discovery call</h3>
+          <p>30 minutes. I understand your idea, your users, and what "done" looks like.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num" aria-hidden="true">02</span>
+        <div>
+          <h3>Scoped proposal</h3>
+          <p>Fixed scope, fixed price. No hourly billing, no scope creep, no surprises.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num" aria-hidden="true">03</span>
+        <div>
+          <h3>I build it</h3>
+          <p>You get a production-deployed product, not a handoff to manage. Two weeks of bug fixes included.</p>
+        </div>
+      </div>
+    </div>
+
+    <span class="section-label">What's included</span>
+
+    <div class="includes">
+      <ul class="includes-list">
+        <li>Full-stack web app or site, production-deployed</li>
+        <li>All technical decisions made for you</li>
+        <li>2 weeks post-launch bug fixes</li>
+        <li>You own the code. No lock-in.</li>
+      </ul>
+    </div>
+
+    <div class="about">
+      <p>
+        Simon is a full-stack engineer who has shipped production apps across fintech, SaaS, and marketplaces. He uses AI to compress delivery timelines without cutting corners. If you've been burned by an agency or can't find the right technical co-founder, you've found him.
+      </p>
+    </div>
+
+    <footer>
+      <span class="footer-name">simon-says.studio</span>
+      <a href="https://calendly.com/contact-simon-says/30min" class="terminal-cta footer-cta" target="_blank" rel="noopener" aria-label="Book a 30-minute call with Simon">
+        <span class="prompt">$</span>
+        <span class="cmd">book --slot 30min --with simon<span class="cursor" aria-hidden="true"></span></span>
+      </a>
+    </footer>
+
+  </div>
 </body>
 </html>

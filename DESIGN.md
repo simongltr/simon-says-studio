@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   ```
 - **Scale:**
-  - Hero: 56–72px / Instrument Serif / line-height 1.05 / letter-spacing -0.02em
+  - Hero: clamp(64px, 13vw, 108px) / Instrument Serif / line-height 0.95 / letter-spacing -0.03em
   - H2: 36px / Instrument Serif / line-height 1.15 / letter-spacing -0.01em
   - H3: 20px / DM Sans 500 / line-height 1.3
   - Body: 16px / DM Sans 400 / line-height 1.65
@@ -37,7 +37,7 @@
 - **Background:** `#0D0D0B` — warm near-black. Not cold SaaS dashboard black. Alive, like a workshop at night.
 - **Surface:** `#161613` — code blocks, cards, callout sections
 - **Primary text:** `#F0EDE6` — warm off-white, not pure white. Reads like cream stock.
-- **Muted text:** `#6B6860` — metadata, secondary copy, placeholder text
+- **Muted text:** `#908E88` — metadata, secondary copy, placeholder text. Lifted from `#6B6860` for WCAG AA compliance (~5:1 on `#0D0D0B`).
 - **Accent:** `#D4FF58` — acid chartreuse. ONE USE ONLY: the primary CTA. Creates instant visual hierarchy without decoration. No one else in this category uses it.
 - **Border:** `#252521` — structural, barely visible. Lines that belong to the material.
 - **Semantic:**
@@ -51,7 +51,7 @@
 - **Base unit:** 8px
 - **Density:** comfortable — room to breathe between sections, not dashboard-tight
 - **Scale:** 2xs(4) xs(8) sm(12) md(16) lg(24) xl(32) 2xl(48) 3xl(64) 4xl(80) 5xl(120)
-- **Max content width:** 680px (centered — readable prose width, not full-viewport)
+- **Max content width:** 760px (centered — wider than prose default to give editorial layout more room)
 - **Side padding:** 24px mobile, 0 desktop (container handles)
 
 ## Layout
@@ -111,7 +111,7 @@ The cursor blinks. It is a link. This is deliberate self-selection: technical fo
   --bg:        #0D0D0B;
   --surface:   #161613;
   --text:      #F0EDE6;
-  --muted:     #6B6860;
+  --muted:     #908E88;
   --accent:    #D4FF58;
   --border:    #252521;
 
@@ -119,7 +119,7 @@ The cursor blinks. It is a link. This is deliberate self-selection: technical fo
   --font-body:    'DM Sans', sans-serif;
   --font-mono:    'Geist Mono', monospace;
 
-  --max-w:     680px;
+  --max-w:     760px;
   --space-xs:  8px;
   --space-sm:  12px;
   --space-md:  16px;
@@ -141,3 +141,8 @@ The cursor blinks. It is a link. This is deliberate self-selection: technical fo
 | 2026-03-29 | Terminal CTA over conventional button | Self-selects the right clients. Memorable. Defensible departure from convention. |
 | 2026-03-29 | 680px max content width | Prose-width constraint. Forces copy discipline. Feels intentional, not template-default. |
 | 2026-03-29 | Initial design system created | Created by /design-consultation based on /office-hours product context. |
+| 2026-03-30 | "Your CTO, on demand." hero headline | Names the job title founders want to hire. Previous "I build your MVP. You keep the equity." targeted co-founder pain, not agency pain. |
+| 2026-03-30 | Bold editorial layout — masthead + section labels | Approved via /design-shotgun (Mockup C3). Thick masthead rule creates newspaper authority. section-label::after flex pattern for labeled dividers. |
+| 2026-03-30 | --muted lifted to #908E88 (from #6B6860) | Design review pass: original muted contrast ~3.5:1, fails WCAG AA. #908E88 = ~5:1. Improves readability for non-technical founders without changing character. |
+| 2026-03-30 | --max-w widened to 760px (from 680px) | Editorial layout needs more breathing room. 680px felt tight with the masthead two-column. |
+| 2026-03-30 | <span class="cmd"> wrapper on terminal CTA | Fixes 320px viewport bug where cursor floated to its own line. Wrapping text+cursor in one inline element prevents flex item separation. |
