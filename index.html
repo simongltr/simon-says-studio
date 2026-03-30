@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon — Builder CTO</title>
+  <meta name="description" content="I build your MVP. You keep the equity. On-demand builder-CTO for non-technical founders with validated ideas.">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://simon-says.studio">
+  <meta property="og:title"       content="Simon — Builder CTO">
+  <meta property="og:description" content="I build your MVP. You keep the equity. On-demand builder-CTO for non-technical founders with validated ideas.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://simon-says.studio">
+
+  <!-- Favicon (inline SVG — no extra file) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230D0D0B'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-size='20' fill='%23D4FF58'>S</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:        #0D0D0B;
+      --surface:   #161613;
+      --text:      #F0EDE6;
+      --muted:     #6B6860;
+      --accent:    #D4FF58;
+      --border:    #252521;
+
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-mono:    'Geist Mono', monospace;
+
+      --max-w:     680px;
+      --space-xs:  8px;
+      --space-sm:  12px;
+      --space-md:  16px;
+      --space-lg:  24px;
+      --space-xl:  32px;
+      --space-2xl: 48px;
+      --space-3xl: 64px;
+      --space-4xl: 80px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      animation: fade-in 150ms ease-out;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ─── LAYOUT ─── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    main {
+      padding: var(--space-4xl) 0;
+    }
+
+    /* ─── EYEBROW ─── */
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ─── HERO ─── */
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 8vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-lg);
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: var(--space-2xl);
+      max-width: 480px;
+    }
+
+    /* ─── TERMINAL CTA ─── */
+    .terminal-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 12px 20px;
+      border-radius: 2px;
+      background: var(--surface);
+      transition: border-color 150ms ease;
+    }
+
+    .terminal-cta:hover { border-color: var(--accent); }
+
+    .terminal-cta .prompt {
+      color: var(--muted);
+      margin-right: 8px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--accent);
+      margin-left: 2px;
+      vertical-align: middle;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    .cta-fallback {
+      display: block;
+      margin-top: var(--space-sm);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .cta-fallback:hover,
+    .cta-fallback:visited { color: var(--muted); }
+
+    /* ─── STEPS ─── */
+    .steps {
+      margin: var(--space-4xl) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .step {
+      display: flex;
+      gap: var(--space-lg);
+      padding: var(--space-lg) 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      min-width: 28px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .step h3 {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ─── INCLUDES ─── */
+    .includes {
+      margin: var(--space-2xl) 0;
+    }
+
+    .includes-heading {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-md);
+    }
+
+    .includes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .includes-list li {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .includes-list li::before {
+      content: '→';
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ─── PRICING SIGNAL ─── */
+    .pricing {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin: var(--space-2xl) 0;
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      margin: var(--space-4xl) 0 var(--space-2xl);
+      padding-top: var(--space-2xl);
+      border-top: 1px solid var(--border);
+    }
+
+    .about p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding-top: var(--space-2xl);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+
+    .footer-name {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-cta {
+      font-size: 12px;
+      padding: 12px 14px;
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 480px) {
+      main { padding: 48px 0; }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ─── ACCESSIBILITY ─── */
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
+      .cursor { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+
+      <p class="eyebrow">Simon — Builder CTO</p>
+
+      <h1>
+        I build your MVP.<br>
+        <em>You keep the equity.</em>
+      </h1>
+
+      <p class="hero-sub">
+        For non-technical founders with validated ideas. Fast, clean delivery at a fraction of agency cost. You get a working product and the code — no lock-in, no surprises.
+      </p>
+
+      <a href="https://calendly.com/contact-simon-says/30min" class="terminal-cta" target="_blank" rel="noopener">
+        <span class="prompt">$</span>
+        book --slot 30min --with simon<span class="cursor"></span>
+      </a>
+      <a href="mailto:contact@simon-says.studio" class="cta-fallback">or email contact@simon-says.studio</a>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Discovery call</h3>
+            <p>30 minutes. I understand your idea, your users, and what "done" looks like.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Scoped proposal</h3>
+            <p>Fixed scope, fixed price. No hourly billing, no scope creep, no surprises.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <h3>I build it</h3>
+            <p>You get a production-deployed product, not a handoff to manage. Two weeks of bug fixes included.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="includes">
+        <p class="includes-heading">What's included</p>
+        <ul class="includes-list">
+          <li>Full-stack web app or site, production-deployed</li>
+          <li>All technical decisions made for you</li>
+          <li>2 weeks post-launch bug fixes</li>
+          <li>You own the code. No lock-in.</li>
+        </ul>
+      </div>
+
+      <p class="pricing">Projects typically start at $10k.</p>
+
+      <div class="about">
+        <p>
+          Simon is a full-stack engineer who has shipped production apps across fintech, SaaS, and marketplaces. He uses AI to compress delivery timelines without cutting corners. If you've been burned by an agency or can't find the right technical co-founder, you've found him.
+        </p>
+      </div>
+
+      <footer>
+        <span class="footer-name">simon-says.studio</span>
+        <a href="https://calendly.com/contact-simon-says/30min" class="terminal-cta footer-cta" target="_blank" rel="noopener">
+          <span class="prompt">$</span>
+          book --slot 30min --with simon<span class="cursor"></span>
+        </a>
+      </footer>
+
+    </div>
+  </main>
+</body>
+</html>
