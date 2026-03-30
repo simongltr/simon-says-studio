@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon — Builder CTO</title>
   <meta name="description" content="I build your MVP. You keep the equity. On-demand builder-CTO for non-technical founders with validated ideas.">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://simon-says.studio">
+  <meta property="og:title"       content="Simon — Builder CTO">
+  <meta property="og:description" content="I build your MVP. You keep the equity. On-demand builder-CTO for non-technical founders with validated ideas.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://simon-says.studio">
+
+  <!-- Favicon (inline SVG — no extra file) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230D0D0B'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-size='20' fill='%23D4FF58'>S</text></svg>">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -140,7 +153,8 @@
       text-decoration: none;
     }
 
-    .cta-fallback:hover { color: var(--text); }
+    .cta-fallback:hover,
+    .cta-fallback:visited { color: var(--muted); }
 
     /* ─── STEPS ─── */
     .steps {
@@ -256,7 +270,7 @@
 
     .footer-cta {
       font-size: 12px;
-      padding: 8px 14px;
+      padding: 12px 14px;
     }
 
     /* ─── MOBILE ─── */
@@ -267,6 +281,12 @@
         flex-direction: column;
         align-items: flex-start;
       }
+    }
+
+    /* ─── ACCESSIBILITY ─── */
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
+      .cursor { animation: none; opacity: 1; }
     }
   </style>
 </head>
