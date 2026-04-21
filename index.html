@@ -343,12 +343,38 @@
     /* ─── ABOUT ─── */
     .about {
       padding: 40px 0;
-      border-bottom: 1px solid var(--border);
     }
 
     .about p {
       font-size: 15px;
       line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .fit {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fit-row {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: var(--space-lg);
+      padding: var(--space-md) 0;
+    }
+
+    .fit-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.6;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      padding-top: 1px;
+    }
+
+    .fit p {
+      font-size: 14px;
+      line-height: 1.6;
       color: var(--muted);
     }
 
@@ -378,6 +404,11 @@
       footer {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .fit-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-xs);
       }
     }
 
@@ -461,10 +492,23 @@
       </ul>
     </div>
 
+    <span class="section-label">Pourquoi moi</span>
+
     <div class="about">
       <p>
-        Ingénieur full-stack, j'ai livré des produits en production dans la fintech, le SaaS et les marketplaces. J'utilise l'IA quand elle permet de compresser les délais, mais la valeur n'est pas l'IA en soi. La valeur, c'est un produit bien cadré, mis en ligne vite, et construit proprement. Meilleur fit : fondateurs avec un problème clair et des priorités nettes, pas équipes à la recherche d'un cofondateur technique ou d'un pilotage produit sans fin.
+        Ingénieur full-stack, j'ai livré des produits en production dans la fintech, le SaaS et les marketplaces. J'utilise l'IA quand elle permet de compresser les délais, mais la valeur n'est pas l'IA en soi. La valeur, c'est un produit bien cadré, mis en ligne vite, et construit proprement.
       </p>
+    </div>
+
+    <div class="fit">
+      <div class="fit-row">
+        <span class="fit-label">Bon fit</span>
+        <p>Fondateurs avec un problème clair, des priorités nettes, et besoin d'une version utilisable sans recruter une équipe technique.</p>
+      </div>
+      <div class="fit-row">
+        <span class="fit-label">Mauvais fit</span>
+        <p>Equipes à la recherche d'un cofondateur technique, d'une discovery ouverte, ou d'un pilotage produit sans fin.</p>
+      </div>
     </div>
 
     <footer>

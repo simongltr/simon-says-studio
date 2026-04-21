@@ -343,12 +343,38 @@
     /* ─── ABOUT ─── */
     .about {
       padding: 40px 0;
-      border-bottom: 1px solid var(--border);
     }
 
     .about p {
       font-size: 15px;
       line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .fit {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fit-row {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: var(--space-lg);
+      padding: var(--space-md) 0;
+    }
+
+    .fit-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.6;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      padding-top: 1px;
+    }
+
+    .fit p {
+      font-size: 14px;
+      line-height: 1.6;
       color: var(--muted);
     }
 
@@ -378,6 +404,11 @@
       footer {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .fit-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-xs);
       }
     }
 
@@ -461,10 +492,23 @@
       </ul>
     </div>
 
+    <span class="section-label">Why me</span>
+
     <div class="about">
       <p>
-        Full-stack engineer, I've shipped production software across fintech, SaaS, and marketplaces. I use AI where it helps compress delivery, but the value is not AI itself. The value is a well-scoped product that gets live fast and is built cleanly. Best fit: founders with a clear problem and clear priorities, not teams looking for a technical co-founder or open-ended roadmap ownership.
+        Full-stack engineer, I've shipped production software across fintech, SaaS, and marketplaces. I use AI where it helps compress delivery, but the value is not AI itself. The value is a well-scoped product that gets live fast and is built cleanly.
       </p>
+    </div>
+
+    <div class="fit">
+      <div class="fit-row">
+        <span class="fit-label">Good fit</span>
+        <p>Founders with a clear problem, clear priorities, and a need for a usable version without hiring a technical team.</p>
+      </div>
+      <div class="fit-row">
+        <span class="fit-label">Not a fit</span>
+        <p>Teams looking for a technical co-founder, open-ended discovery, or ongoing product roadmap ownership.</p>
+      </div>
     </div>
 
     <footer>
