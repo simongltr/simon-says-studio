@@ -113,6 +113,31 @@
       color: var(--accent);
     }
 
+    .masthead-right {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-lg);
+    }
+
+    .header-cta {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 6px 14px;
+      border-radius: 6px;
+      background: transparent;
+      transition: background 150ms ease, color 150ms ease;
+      white-space: nowrap;
+    }
+
+    .header-cta:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
     .lang-switch {
       font-family: var(--font-mono);
       font-size: 11px;
@@ -368,11 +393,14 @@
   <div class="masthead-bar">
     <div class="masthead">
       <span class="masthead-logo"><span class="accent">&gt;</span>simon says<span class="accent">_</span></span>
-      <nav class="lang-switch" aria-label="Language">
-        <span class="active" aria-current="page">EN</span>
-        <span class="sep">/</span>
-        <a href="/">FR</a>
-      </nav>
+      <div class="masthead-right">
+        <nav class="lang-switch" aria-label="Language">
+          <span class="active" aria-current="page">EN</span>
+          <span class="sep">/</span>
+          <a href="/">FR</a>
+        </nav>
+        <a href="https://calendly.com/contact-simon-says/30min" class="header-cta" target="_blank" rel="noopener">Book a call</a>
+      </div>
     </div>
   </div>
 
