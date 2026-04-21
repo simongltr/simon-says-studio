@@ -22,7 +22,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Geist+Mono:wght@300;400;500&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -81,14 +81,17 @@
       align-items: baseline;
     }
 
-    .masthead-name,
-    .masthead-url {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .masthead-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
       white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .masthead-logo .accent {
+      color: var(--accent);
     }
 
     .lang-switch {
@@ -334,9 +337,6 @@
       }
     }
 
-    @media (max-width: 560px) {
-      .masthead-url { display: none; }
-    }
 
     /* ─── ACCESSIBILITY ─── */
     @media (prefers-reduced-motion: reduce) {
@@ -349,8 +349,7 @@
   <div class="container">
 
     <div class="masthead">
-      <span class="masthead-name">Simon — Builder CTO</span>
-      <span class="masthead-url">simon-says.studio</span>
+      <span class="masthead-logo"><span class="accent">&gt;</span>simon says<span class="accent">_</span></span>
       <nav class="lang-switch" aria-label="Langue">
         <a href="/en">EN</a>
         <span class="sep">/</span>
