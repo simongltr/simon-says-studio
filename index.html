@@ -73,12 +73,29 @@
     }
 
     /* ─── MASTHEAD ─── */
+    .masthead-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(13,13,11, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
     .masthead {
-      border-bottom: 3px solid var(--text);
-      padding: 20px 0 16px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 14px 24px 12px;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+    }
+
+    .masthead-spacer {
+      height: 47px;
     }
 
     .masthead-logo {
@@ -346,8 +363,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
-
+  <div class="masthead-bar">
     <div class="masthead">
       <span class="masthead-logo"><span class="accent">&gt;</span>simon says<span class="accent">_</span></span>
       <nav class="lang-switch" aria-label="Langue">
@@ -356,6 +372,11 @@
         <span class="active" aria-current="page">FR</span>
       </nav>
     </div>
+  </div>
+
+  <div class="container">
+
+    <div class="masthead-spacer"></div>
 
     <div class="hero">
       <h1>Votre CTO,<em>à la demande.</em></h1>
