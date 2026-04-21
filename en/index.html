@@ -24,401 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&amp;family=Geist+Mono:wght@300;400;500&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg:        #0D0D0B;
-      --surface:   #161613;
-      --text:      #F0EDE6;
-      --muted:     #908E88;
-      --accent:    #c8ff00;
-      --border:    #252521;
-
-      --font-display: 'Instrument Serif', Georgia, serif;
-      --font-body:    'DM Sans', system-ui, sans-serif;
-      --font-mono:    'Geist Mono', monospace;
-
-      --max-w:     760px;
-      --space-xs:  8px;
-      --space-sm:  12px;
-      --space-md:  16px;
-      --space-lg:  24px;
-      --space-xl:  32px;
-      --space-2xl: 48px;
-      --space-3xl: 64px;
-      --space-4xl: 80px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    ::selection { background: var(--accent); color: var(--bg); }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      animation: fade-in 150ms ease-out;
-    }
-
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    /* ─── LAYOUT ─── */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ─── MASTHEAD ─── */
-    .masthead-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(13,13,11, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .masthead {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 14px 24px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .masthead-spacer {
-      height: 47px;
-    }
-
-    .masthead-logo {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--text);
-      white-space: nowrap;
-      text-decoration: none;
-    }
-
-    .masthead-logo .accent {
-      color: var(--accent);
-    }
-
-    .masthead-right {
-      display: flex;
-      align-items: baseline;
-      gap: var(--space-lg);
-    }
-
-    .header-cta {
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid var(--accent);
-      padding: 6px 14px;
-      border-radius: 6px;
-      background: transparent;
-      transition: background 150ms ease, color 150ms ease;
-      white-space: nowrap;
-    }
-
-    .header-cta:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    .lang-switch {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      display: flex;
-      gap: 8px;
-      align-items: baseline;
-    }
-
-    .lang-switch a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 150ms ease;
-    }
-
-    .lang-switch a:hover { color: var(--text); }
-    .lang-switch .active { color: var(--text); }
-    .lang-switch .sep { color: var(--border); }
-
-    /* ─── HERO ─── */
-    .hero {
-      padding: 56px 0 48px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h1 {
-      font-family: var(--font-display);
-      font-size: clamp(64px, 13vw, 108px);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin-bottom: 28px;
-    }
-
-    h1 em {
-      font-style: italic;
-      color: var(--accent);
-      display: block;
-    }
-
-    .hero-sub {
-      font-size: 18px;
-      line-height: 1.65;
-      color: var(--muted);
-      margin-bottom: 18px;
-      max-width: 520px;
-    }
-
-    .hero-meta {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      line-height: 1.6;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 36px;
-    }
-
-    /* ─── TERMINAL CTA ─── */
-    .terminal-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0;
-      font-family: var(--font-mono);
-      font-size: 14px;
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      padding: 12px 20px;
-      border-radius: 2px;
-      background: var(--surface);
-      transition: border-color 150ms ease;
-    }
-
-    .terminal-cta:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(200,255,0, 0.08); }
-    .terminal-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-    .terminal-cta .prompt {
-      color: var(--muted);
-      margin-right: 8px;
-    }
-
-    .cmd {
-      display: inline;
-      white-space: nowrap;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 14px;
-      background: var(--accent);
-      margin-left: 2px;
-      vertical-align: middle;
-      animation: blink 1.1s step-end infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0; }
-    }
-
-    .cta-fallback {
-      display: inline-block;
-      padding: 14px 0;
-      margin-top: var(--space-xs);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .cta-fallback:hover,
-    .cta-fallback:visited { color: var(--muted); }
-
-    /* ─── SECTION LABEL ─── */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 40px 0 0;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ─── STEPS ─── */
-    .steps {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .step {
-      display: flex;
-      gap: var(--space-lg);
-      padding: var(--space-lg) 0;
-      border-bottom: 1px solid var(--border);
-      align-items: flex-start;
-    }
-
-    .step:last-child { border-bottom: none; }
-
-    .step-num {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--muted);
-      min-width: 28px;
-      padding-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .step h3 {
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .step p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    /* ─── INCLUDES ─── */
-    .includes {
-      padding: 32px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .includes-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xs);
-    }
-
-    .includes-list li {
-      font-size: 14px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .includes-list li::before {
-      content: '→';
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
-
-    /* ─── ABOUT ─── */
-    .about {
-      padding: 40px 0;
-    }
-
-    .about p {
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .fit {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .fit-row {
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: var(--space-lg);
-      padding: var(--space-md) 0;
-    }
-
-    .fit-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      line-height: 1.6;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text);
-      padding-top: 1px;
-    }
-
-    .fit p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--muted);
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      padding: 32px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: var(--space-md);
-    }
-
-    .footer-name {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .footer-cta {
-      font-size: 12px;
-      padding: 10px 14px;
-    }
-
-    /* ─── MOBILE ─── */
-    @media (max-width: 480px) {
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .fit-row {
-        grid-template-columns: 1fr;
-        gap: var(--space-xs);
-      }
-    }
-
-
-    /* ─── ACCESSIBILITY ─── */
-    @media (prefers-reduced-motion: reduce) {
-      body { animation: none; }
-      .cursor { animation: none; opacity: 1; }
-    }
-  </style>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <div class="masthead-bar">
@@ -435,12 +41,10 @@
     </div>
   </div>
 
-  <div class="container">
-
-    <div class="masthead-spacer"></div>
+  <main class="container">
 
     <div class="hero">
-      <h1>Your CTO,<em>on demand.</em></h1>
+      <h1 class="hero-title">Your CTO,<em>on demand.</em></h1>
 
       <p class="hero-sub">
         For non-technical founders who already understand the problem and need one senior builder to scope, build, and launch version 1.
@@ -455,7 +59,7 @@
       <a href="mailto:contact@simon-says.studio" class="cta-fallback">or just email me — contact@simon-says.studio</a>
     </div>
 
-    <span class="section-label">How it works</span>
+    <h2 class="section-label">How it works</h2>
 
     <div class="steps">
       <div class="step">
@@ -481,7 +85,7 @@
       </div>
     </div>
 
-    <span class="section-label">What's included</span>
+    <h2 class="section-label">What's included</h2>
 
     <div class="includes">
       <ul class="includes-list">
@@ -492,7 +96,7 @@
       </ul>
     </div>
 
-    <span class="section-label">Why me</span>
+    <h2 class="section-label">Why me</h2>
 
     <div class="about">
       <p>
@@ -500,25 +104,24 @@
       </p>
     </div>
 
-    <div class="fit">
+    <dl class="fit">
       <div class="fit-row">
-        <span class="fit-label">Good fit</span>
-        <p>Founders with a clear problem, clear priorities, and a need for a usable version without hiring a technical team.</p>
+        <dt class="fit-label">Good fit</dt>
+        <dd>Founders with a clear problem, clear priorities, and a need for a usable version without hiring a technical team.</dd>
       </div>
       <div class="fit-row">
-        <span class="fit-label">Not a fit</span>
-        <p>Teams looking for a technical co-founder, open-ended discovery, or ongoing product roadmap ownership.</p>
+        <dt class="fit-label">Not a fit</dt>
+        <dd>Teams looking for a technical co-founder, open-ended discovery, or ongoing product roadmap ownership.</dd>
       </div>
-    </div>
+    </dl>
 
-    <footer>
+    <footer class="site-footer">
       <span class="masthead-logo"><span class="accent">&gt;</span>simon says<span class="accent">_</span></span>
       <a href="https://calendly.com/contact-simon-says/30min" class="terminal-cta footer-cta" target="_blank" rel="noopener" aria-label="Book a 30-minute call with Simon">
         <span class="prompt">$</span>
         <span class="cmd">book --slot 30min --with simon<span class="cursor" aria-hidden="true"></span></span>
       </a>
     </footer>
-
-  </div>
+  </main>
 </body>
 </html>

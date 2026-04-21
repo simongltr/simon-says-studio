@@ -109,10 +109,11 @@ Current structure:
 - Hero
 - How it works / Comment ca marche
 - What's included / Ce qui est inclus
-- About paragraph
+- Why me / Pourquoi moi
+- Fit filter
 - Footer with repeated terminal CTA
 
-Section labels use uppercase mono text with a horizontal rule via `::after`.
+Section labels are `h2.section-label` headings styled as uppercase mono text with a horizontal rule via `::after`.
 
 ## Motion
 
