@@ -96,6 +96,44 @@
       </ul>
     </div>
 
+    <h2 class="section-label">Ce que je peux construire</h2>
+
+    <div class="specimens" data-specimens aria-label="Exemples stylisés d'interfaces possibles">
+      <div class="specimen-tabs" role="group" aria-label="Types d'interfaces">
+        <button class="specimen-tab" type="button" id="specimen-dashboard-tab" aria-pressed="true" aria-controls="specimen-dashboard" data-specimen-target="specimen-dashboard">Dashboard</button>
+        <button class="specimen-tab" type="button" id="specimen-landing-tab" aria-pressed="false" aria-controls="specimen-landing" data-specimen-target="specimen-landing">Landing page</button>
+        <button class="specimen-tab" type="button" id="specimen-web-app-tab" aria-pressed="false" aria-controls="specimen-web-app" data-specimen-target="specimen-web-app">Web app</button>
+        <button class="specimen-tab" type="button" id="specimen-internal-tool-tab" aria-pressed="false" aria-controls="specimen-internal-tool" data-specimen-target="specimen-internal-tool">Outil interne</button>
+      </div>
+      <p class="specimen-note">Chaque projet est construit sur mesure pour s'adapter aux besoins du client.</p>
+
+      <div class="specimen-stage">
+        <article class="specimen" id="specimen-dashboard" aria-labelledby="specimen-dashboard-tab">
+          <figure class="specimen-frame">
+            <img src="assets/specimens/dashboard.png" width="960" height="690" alt="Exemple stylisé et abstrait de dashboard produit">
+          </figure>
+        </article>
+
+        <article class="specimen" id="specimen-landing" aria-labelledby="specimen-landing-tab" hidden>
+          <figure class="specimen-frame">
+            <img src="assets/specimens/landing.png" width="960" height="690" alt="Exemple stylisé et abstrait de page de lancement">
+          </figure>
+        </article>
+
+        <article class="specimen" id="specimen-web-app" aria-labelledby="specimen-web-app-tab" hidden>
+          <figure class="specimen-frame">
+            <img src="assets/specimens/web-app.png" width="960" height="690" alt="Exemple stylisé et abstrait de web app">
+          </figure>
+        </article>
+
+        <article class="specimen" id="specimen-internal-tool" aria-labelledby="specimen-internal-tool-tab" hidden>
+          <figure class="specimen-frame">
+            <img src="assets/specimens/internal-tool.png" width="960" height="690" alt="Exemple stylisé et abstrait d'outil interne">
+          </figure>
+        </article>
+      </div>
+    </div>
+
     <h2 class="section-label">Pourquoi moi</h2>
 
     <div class="about">
@@ -123,5 +161,6 @@
       </a>
     </footer>
   </main>
+  <script src="site.js"></script>
 </body>
 </html>

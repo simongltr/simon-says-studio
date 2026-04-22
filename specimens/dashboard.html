@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard specimen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="specimens.css">
+</head>
+<body class="capture-card">
+  <main class="capture">
+    <section class="screen dashboard" aria-label="Abstract dashboard interface specimen">
+      <header class="dashboard-header">
+        <div>
+          <p class="mono muted">Operating system</p>
+          <h1 class="dashboard-title">Launch control</h1>
+        </div>
+        <div class="dashboard-meta">
+          <span class="chip mono">Live</span>
+          <span class="chip mono">30d</span>
+          <span class="chip mono">All teams</span>
+        </div>
+      </header>
+
+      <section class="dashboard-body">
+        <div class="dashboard-main">
+          <article class="hero-kpi panel">
+            <div class="hero-kpi-top mono muted">
+              <span>Net revenue</span>
+              <span>+18.4%</span>
+            </div>
+            <strong>EUR128.4k</strong>
+            <div class="sparkline" aria-hidden="true">
+              <svg viewBox="0 0 280 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                <path class="spark-area" d="M0 48 L28 42 L56 46 L84 32 L112 38 L140 24 L168 30 L196 16 L224 22 L252 8 L280 14 L280 60 L0 60 Z"/>
+                <path class="spark-path" d="M0 48 L28 42 L56 46 L84 32 L112 38 L140 24 L168 30 L196 16 L224 22 L252 8 L280 14"/>
+              </svg>
+            </div>
+          </article>
+
+          <div class="command-chart panel">
+            <div class="panel-head mono muted">
+              <span>Product signal</span>
+              <span>Weeks 01-12</span>
+            </div>
+            <div class="chart-stage">
+              <div class="chart-gridlines" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="chart-bars" aria-hidden="true">
+                <span style="--h: 34%"></span>
+                <span style="--h: 52%"></span>
+                <span style="--h: 46%"></span>
+                <span style="--h: 62%"></span>
+                <span style="--h: 74%"></span>
+                <span style="--h: 58%"></span>
+                <span style="--h: 81%"></span>
+                <span style="--h: 88%"></span>
+              </div>
+              <svg class="trend-chart" viewBox="0 0 480 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                <path class="trend-area" d="M0 60 L60 50 L120 54 L180 38 L240 30 L300 44 L360 26 L420 18 L480 12 L480 90 L0 90 Z"/>
+                <path class="trend-path" d="M0 60 L60 50 L120 54 L180 38 L240 30 L300 44 L360 26 L420 18 L480 12"/>
+                <path class="trend-path trend-path-muted" d="M0 74 L60 66 L120 70 L180 56 L240 50 L300 60 L360 44 L420 38 L480 32"/>
+              </svg>
+              <div class="chart-callout mono">
+                <span>Peak</span>
+                <strong>EUR18.2k</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="dashboard-side">
+          <div class="metrics">
+            <div class="metric panel" style="--w: 82%">
+              <span class="mono muted">Activation</span>
+              <strong>64%</strong>
+              <span class="metric-bar"></span>
+            </div>
+            <div class="metric panel" style="--w: 71%">
+              <span class="mono muted">Retention</span>
+              <strong>41%</strong>
+              <span class="metric-bar"></span>
+            </div>
+            <div class="metric panel" style="--w: 88%">
+              <span class="mono muted">Ship rate</span>
+              <strong>12</strong>
+              <span class="metric-bar"></span>
+            </div>
+            <div class="metric panel" style="--w: 95%">
+              <span class="mono muted">Health</span>
+              <strong>99.8</strong>
+              <span class="metric-bar"></span>
+            </div>
+          </div>
+
+          <section class="funnel panel">
+            <div class="panel-head mono muted">
+              <span>Funnel</span>
+              <span>Live</span>
+            </div>
+            <div class="funnel-bars">
+              <div class="funnel-row" style="--w: 100%"><span>Visit</span><strong>24.8k</strong></div>
+              <div class="funnel-row" style="--w: 76%"><span>Signup</span><strong>6.4k</strong></div>
+              <div class="funnel-row" style="--w: 52%"><span>Active</span><strong>2.1k</strong></div>
+              <div class="funnel-row" style="--w: 34%"><span>Paid</span><strong>842</strong></div>
+            </div>
+          </section>
+
+          <section class="health panel">
+            <div class="panel-head mono muted">
+              <span>System health</span>
+              <span>Now</span>
+            </div>
+            <div class="health-grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

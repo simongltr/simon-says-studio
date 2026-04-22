@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internal tool specimen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="specimens.css">
+</head>
+<body class="capture-card">
+  <main class="capture">
+    <section class="screen tool" aria-label="Abstract internal tool interface specimen">
+      <header class="tool-top panel">
+        <div>
+          <span class="mono muted">Operations</span>
+          <strong>Admin queue</strong>
+        </div>
+        <div class="tool-actions">
+          <span class="chip mono">Assign</span>
+          <span class="chip mono">Export</span>
+        </div>
+      </header>
+
+      <section class="tool-metrics">
+        <div class="panel">
+          <span class="mono muted">Open</span>
+          <strong>42</strong>
+        </div>
+        <div class="panel">
+          <span class="mono muted">Review</span>
+          <strong>18</strong>
+        </div>
+        <div class="panel">
+          <span class="mono muted">SLA</span>
+          <strong>96%</strong>
+        </div>
+      </section>
+
+      <section class="tool-filters">
+        <span class="chip mono">Search</span>
+        <span class="chip mono">Status</span>
+        <span class="chip mono">Owner</span>
+      </section>
+
+      <section class="tool-body">
+        <div class="tool-table panel">
+          <div class="tool-row tool-head mono muted">
+            <span></span>
+            <span>Request</span>
+            <span>Status</span>
+            <span>Owner</span>
+            <span>Age</span>
+          </div>
+          <div class="tool-row is-selected">
+            <span class="prio prio-high"></span>
+            <span class="bar"></span>
+            <b class="status-pill"></b>
+            <i></i>
+            <em class="mono muted">04h</em>
+          </div>
+          <div class="tool-row">
+            <span class="prio prio-high"></span>
+            <span class="bar" style="--w: 82%"></span>
+            <b class="status-pill is-wide"></b>
+            <i></i>
+            <em class="mono muted">11h</em>
+          </div>
+          <div class="tool-row">
+            <span class="prio prio-mid"></span>
+            <span class="bar" style="--w: 74%"></span>
+            <b class="status-pill"></b>
+            <i></i>
+            <em class="mono muted">01d</em>
+          </div>
+          <div class="tool-row">
+            <span class="prio"></span>
+            <span class="bar" style="--w: 88%"></span>
+            <b class="status-pill is-wide"></b>
+            <i></i>
+            <em class="mono muted">02d</em>
+          </div>
+          <div class="tool-row">
+            <span class="prio prio-mid"></span>
+            <span class="bar" style="--w: 69%"></span>
+            <b class="status-pill"></b>
+            <i></i>
+            <em class="mono muted">03d</em>
+          </div>
+        </div>
+
+        <aside class="tool-detail panel">
+          <div class="detail-head">
+            <span class="dot"></span>
+            <strong class="mono">Selected</strong>
+          </div>
+          <div class="detail-mini-chart">
+            <svg viewBox="0 0 126 32" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path class="spark-area" d="M0 24 L21 20 L42 22 L63 14 L84 18 L105 8 L126 12 L126 32 L0 32 Z"/>
+              <path class="spark-path" d="M0 24 L21 20 L42 22 L63 14 L84 18 L105 8 L126 12"/>
+            </svg>
+          </div>
+          <div class="detail-block">
+            <span></span>
+            <span style="--w: 72%"></span>
+          </div>
+          <div class="detail-timeline">
+            <div class="tl-entry">
+              <span class="tl-dot"></span>
+              <span class="bar" style="--w: 78%"></span>
+              <em class="mono muted">2h</em>
+            </div>
+            <div class="tl-entry">
+              <span class="tl-dot"></span>
+              <span class="bar" style="--w: 62%"></span>
+              <em class="mono muted">4h</em>
+            </div>
+            <div class="tl-entry">
+              <span class="tl-dot"></span>
+              <span class="bar" style="--w: 85%"></span>
+              <em class="mono muted">1d</em>
+            </div>
+            <div class="tl-entry">
+              <span class="tl-dot"></span>
+              <span class="bar" style="--w: 54%"></span>
+              <em class="mono muted">2d</em>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

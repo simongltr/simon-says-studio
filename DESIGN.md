@@ -109,11 +109,25 @@ Current structure:
 - Hero
 - How it works / Comment ca marche
 - What's included / Ce qui est inclus
+- Interface specimens / Ce que je peux construire
 - Why me / Pourquoi moi
 - Fit filter
 - Footer with repeated terminal CTA
 
 Section labels are `h2.section-label` headings styled as uppercase mono text with a horizontal rule via `::after`.
+
+### Interface Specimens
+
+The "What I can build / Ce que je peux construire" section displays four committed PNG screenshots, with the dashboard as the larger featured specimen:
+
+- Landing page
+- Dashboard
+- Web app
+- Internal tool / Outil interne
+
+The screenshots are generated from standalone source files in `specimens/` and committed to `assets/specimens/`. They are source assets, not user-facing site pages. The live FR/EN pages should reference static images only; do not use iframes or runtime rendering for this section.
+
+These are generic product specimens, not portfolio screenshots or client work. They should feel precise and built rather than decorative: composed app chrome, nested panels, interface density, and clear hierarchy. Keep them static, brandless, and lightweight: thin borders, `--surface`, `--border`, `--muted`, `--text`, mono labels, no gradients, no animation, no JavaScript, and no mock customer names.
 
 ## Motion
 
